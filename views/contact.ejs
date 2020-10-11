@@ -1,0 +1,46 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<main class="container">   
+  <div class="jumbotron">
+    <h1 class="center">Stay In Touch</h1>
+            <div id="errorMessage" class="alert alert-danger" role="alert" hidden>
+
+            </div>
+            <hr>
+            <form id="conactForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstName" placeholder="Enter your First Name" required="required" autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastName" placeholder="Enter your Last Name" required="required">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number</label>
+                    <input type="tel" class="form-control" id="contactNumber" name="contactNumber" aria-describedby="contactNumber" placeholder="Enter your Contact Number" required="required">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAddress">Email address</label>
+                    <input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailAddress" placeholder="Enter your Email Address" required="required">
+                </div>
+
+                <div class="form-group">
+                    <label for="shortMessage">Your Message</label>
+                    <textarea class="form-control" id="shortMessage" name="shortMessage" rows="3" aria-describedby="shortMessage"></textarea>
+                </div>
+
+                <button id="submitButton" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-envelope-square"></i> Send</button>
+                <button id="resetButton" type="reset" class="btn btn-warning btn-lg"><i class="fas fa-comment-slash"></i> Try Again</button>
+            </form>
+  </div>
+</main>
+    
+<%- include partials/bottom_nav.ejs %>  
+
+<%- include partials/footer.ejs %>

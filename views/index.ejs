@@ -1,14 +1,30 @@
 <%- include partials/header.ejs %>
 
-<%- include partials/main_nav.ejs %>
+    <%- include partials/main_nav.ejs %>
 
-<main class="container">   
-  <div class="jumbotron">
-    <h1 class="display-4"><h1>Welcome to <%= title %> page stuff & the Real World!</h1></h1>
-  </div>
-</main>
-    
-<%- include partials/bottom_nav.ejs %>  
+        <main class="container">
+            <div class="jumbotron">
+                <h1 class="center">Welcome</h1>
+                <hr>
+                <p>Hello! I am Devesh Kumar. Welcome to my Website. Feel free to browse through the website and check out the services I offer, projects I developed and leave me a message or feedback. I have shared links below to my other pages on website
+                    as well as my GitHub and LinkedIn profile links.</p>
+                <hr>
+                <h5 class="center">Links to Other Pages on Website</h5>
+                <hr>
+                <p class="center">
+                    <a href="/about"><img class="autoImage" src="./Assets/images/about.png" alt=""></a>
+                    <a href="/projects"><img class="autoImage" src="./Assets/images/projects.png" alt=""></a>
+                    <a href="/services"><img class="autoImage" src="./Assets/images/services.png" alt=""></a>
+                    <a href="/contact"><img class="autoImage" src="./Assets/images/contact.png" alt=""></a>
+                </p>
+                <br>
+                <hr>
+                <div class="center">
+                    <a href="https://github.com/portretrieve"><img class="autoImage" src="./Assets/images/github.png" alt=""></a>
+                    <a href="https://www.linkedin.com/in/devesh-kumar-2aa03b64/"><img class="autoImage" src="./Assets/images/images.png" alt=""></a>
+                </div>
+            </div>
 
-<%- include partials/footer.ejs %>
-  
+            <%- include partials/bottom_nav.ejs %>
+
+                <%- include partials/footer.ejs %>
