@@ -1,3 +1,10 @@
+/* File Name: app.js
+   Author: Devesh Kumar
+   File Description: Custom JS File  */
+
+
+"use strict";
+
 (function() {
 
 
@@ -32,32 +39,34 @@
             });
 
             let contactNumber = document.getElementById("contactNumber");
-            contactNumber.addEventListener("keypress", (event) => {
-                event = (event) ? event : window.event;
-                let charCode = (event.which) ? event.which : event.keyCode;
-                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                    return false;
+            contactNumber.addEventListener("blur", (event) => {
+                if (contactNumber.value !== "" && !contactNumber.value.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)) {
+                    contactNumber.focus();
+                    errorMessage.hidden = false;
+                    errorMessage.textContent = "Please enter a Valid Phone number with area code and country code (If International Number)";
+                } else {
+                    errorMessage.hidden = true;
                 }
-                return true;
             });
 
-            let submitButton = document.getElementById("submitButton");
 
-            submitButton.addEventListener("click", (event) => {
-                event.preventDefault();
-                console.log("Submit Button Clicked");
+            let emailAddress = document.getElementById("emailAddress");
+            emailAddress.addEventListener("blur", (event) => {
+                if (!emailAddress.value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+                    emailAddress.focus();
+                    errorMessage.hidden = false;
+                    errorMessage.textContent = "Please enter a Valid email address.";
+                } else {
+                    errorMessage.hidden = true;
+                }
             });
+
         }
         return false;
     }
 
     function Start() {
-        let formValidated = validateForm();
-        if (formValidated) {
-            console.log("successfully validated form");
-        } else {
-            console.warn("form not validated - does not exist");
-        }
+        validateForm();
     }
 
     window.addEventListener("load", Start);
